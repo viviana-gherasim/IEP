@@ -91,7 +91,6 @@ class Hospital
 
     void countDoctors()
     {
-        if(nrRooms==100)
             std::cout<<hospitalName<<"I am counting the doctors!"<<std::endl;
     }
     const std::string& getHospitalName()
@@ -110,6 +109,35 @@ Hospital& Hospital::operator=(const Hospital& rhs)
     Person *pOrig = owner;  //remember original pb
     owner = new Person(*rhs.owner); //point pb to a copy of rhs’s owner
     delete pOrig;   //delete the original pb
+    return *this;
+}
+
+class Military: public Hospital
+{
+    public:
+        Military(const std::string& hospitalName, Person *owner, unsigned int nrDoctors, unsigned int nrRooms):
+        Hospital(hospitalName, owner, nrDoctors),
+        nrRooms(nrRooms){};
+
+    Military& operator=(const Military&);
+    Military(const Military& rhs):
+        Hospital(rhs),  //invoke base class copy contructor
+        nrRooms(rhs.nrRooms){};
+
+    void countRooms()
+    {
+        std::cout<<hospitalName<<"I am counting the rooms!"<<std::endl;
+    }
+
+    private:
+        unsigned int nrRooms;
+
+};
+
+Military& Military::operator=(const Military& rhs)
+{
+    Hospital::operator=(rhs);   //assign base class parts copy assignment
+    nrRooms=rhs.nrRooms;
     return *this;
 }
 
