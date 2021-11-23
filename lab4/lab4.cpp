@@ -89,10 +89,10 @@ class Hospital
 
     Hospital& operator=(const Hospital&);
 
-    void countRooms()
+    void countDoctors()
     {
         if(nrRooms==100)
-            std::cout<<hospitalName<<"I am counting the rooms!"<<std::endl;
+            std::cout<<hospitalName<<"I am counting the doctors!"<<std::endl;
     }
     const std::string& getHospitalName()
     {
@@ -108,7 +108,7 @@ class Hospital
 Hospital& Hospital::operator=(const Hospital& rhs)
 {
     Person *pOrig = owner;  //remember original pb
-    owner - new Person(*rhs.owner); //point pb to a copy of rhs’s owner
+    owner = new Person(*rhs.owner); //point pb to a copy of rhs’s owner
     delete pOrig;   //delete the original pb
     return *this;
 }
