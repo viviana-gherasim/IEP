@@ -101,13 +101,15 @@ class Hospital
         const std::string& hospitalName;
         Person *owner;
         const unsigned int nrDoctors;
-        const unsigned int nrRooms;
+        
 };
 
 Hospital& Hospital::operator=(const Hospital& rhs)
 {
     Person *pOrig = owner;  //remember original pb
     owner = new Person(*rhs.owner); //point pb to a copy of rhs’s owner
+    this.hospitalName = rhs.hospitalName;  
+    this.nrDoctors = rhs.nrDoctors;
     delete pOrig;   //delete the original pb
     return *this;
 }
@@ -143,6 +145,9 @@ Military& Military::operator=(const Military& rhs)
 
 int main()
 {
+    Person viviana("Viviana", 22);
+    Person ana("Ana",25);
+
     Surgeon s1("Vivi", 37, 55000);
     Cardiologist c1("Ana", 41, 80000);
     Pediatrician p1("Oana", 48, 35000);
