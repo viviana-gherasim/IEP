@@ -13,8 +13,6 @@ src/Doctor/src/Pacient.hpp
 /mnt/c/Users/vivia/IEP/IEP/src/Doctor/src/Pacient.hpp
 src/Hospital/src/Hospital.hpp
 /mnt/c/Users/vivia/IEP/IEP/src/Hospital/src/Hospital.hpp
-src/Lock/src/Lock.hpp
-/mnt/c/Users/vivia/IEP/IEP/src/Lock/src/Lock.hpp
 iostream
 -
 memory
@@ -48,13 +46,5 @@ Doctor.hpp
 iostream
 -
 cstring
--
-
-/mnt/c/Users/vivia/IEP/IEP/src/Lock/src/Lock.hpp
-iostream
--
-mutex
--
-memory
 -
 

@@ -41,7 +41,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/mnt/c/Users/vivia/IEP/IEP/build/src/Doctor/cmake_install.cmake")
   include("/mnt/c/Users/vivia/IEP/IEP/build/src/Hospital/cmake_install.cmake")
-  include("/mnt/c/Users/vivia/IEP/IEP/build/src/Lock/cmake_install.cmake")
 
 endif()
 

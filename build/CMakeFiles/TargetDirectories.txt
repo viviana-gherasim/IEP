@@ -9,6 +9,3 @@
 /mnt/c/Users/vivia/IEP/IEP/build/src/Hospital/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/vivia/IEP/IEP/build/src/Hospital/CMakeFiles/edit_cache.dir
 /mnt/c/Users/vivia/IEP/IEP/build/src/Hospital/CMakeFiles/Hospital.dir
-/mnt/c/Users/vivia/IEP/IEP/build/src/Lock/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/vivia/IEP/IEP/build/src/Lock/CMakeFiles/edit_cache.dir
-/mnt/c/Users/vivia/IEP/IEP/build/src/Lock/CMakeFiles/Lock.dir

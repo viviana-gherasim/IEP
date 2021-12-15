@@ -1,7 +1,6 @@
 #include "src/Doctor/src/Doctor.hpp"
 #include "src/Doctor/src/Pacient.hpp"
 #include "src/Hospital/src/Hospital.hpp"
-#include "src/Lock/src/Lock.hpp"
 
 #include<iostream>
 #include<memory>

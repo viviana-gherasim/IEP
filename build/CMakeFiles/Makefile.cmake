@@ -14,7 +14,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/CMakeLists.txt"
   "../src/Doctor/CMakeLists.txt"
   "../src/Hospital/CMakeLists.txt"
-  "../src/Lock/CMakeLists.txt"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -48,7 +47,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Doctor/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Hospital/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/Lock/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -56,5 +54,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/IEP.dir/DependInfo.cmake"
   "src/Doctor/CMakeFiles/Doctor.dir/DependInfo.cmake"
   "src/Hospital/CMakeFiles/Hospital.dir/DependInfo.cmake"
-  "src/Lock/CMakeFiles/Lock.dir/DependInfo.cmake"
   )

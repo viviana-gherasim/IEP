@@ -149,19 +149,6 @@ Hospital/fast:
 	$(MAKE) -f src/Hospital/CMakeFiles/Hospital.dir/build.make src/Hospital/CMakeFiles/Hospital.dir/build
 .PHONY : Hospital/fast
 
-#=============================================================================
-# Target rules for targets named Lock
-
-# Build rule for target.
-Lock: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Lock
-.PHONY : Lock
-
-# fast build rule for target.
-Lock/fast:
-	$(MAKE) -f src/Lock/CMakeFiles/Lock.dir/build.make src/Lock/CMakeFiles/Lock.dir/build
-.PHONY : Lock/fast
-
 Main.o: Main.cpp.o
 
 .PHONY : Main.o
@@ -200,7 +187,6 @@ help:
 	@echo "... IEP"
 	@echo "... Doctor"
 	@echo "... Hospital"
-	@echo "... Lock"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
