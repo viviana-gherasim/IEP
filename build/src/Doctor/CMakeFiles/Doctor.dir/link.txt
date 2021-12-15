@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDoctor.a  CMakeFiles/Doctor.dir/src/Doctor.cpp.o CMakeFiles/Doctor.dir/src/Pacient.cpp.o CMakeFiles/Doctor.dir/src/Surgeon.cpp.o CMakeFiles/Doctor.dir/src/Cardiologist.cpp.o CMakeFiles/Doctor.dir/src/Pediatrician.cpp.o
+/usr/bin/ranlib libDoctor.a

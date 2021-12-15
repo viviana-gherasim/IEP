@@ -1,0 +1,1 @@
+/usr/bin/c++   -pthread  -rdynamic CMakeFiles/IEP.dir/Main.cpp.o  -o IEP  src/Doctor/libDoctor.a src/Hospital/libHospital.a 

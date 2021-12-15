@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/vivia/IEP/IEP/src/Person/src/Person.cpp
+Person.hpp
+/mnt/c/Users/vivia/IEP/IEP/src/Person/src/Person.hpp
+
+/mnt/c/Users/vivia/IEP/IEP/src/Person/src/Person.hpp
+iostream
+-
+

@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/vivia/IEP/IEP/src/Hospital/src/Hospital.cpp
+Hospital.hpp
+/mnt/c/Users/vivia/IEP/IEP/src/Hospital/src/Hospital.hpp
+
+/mnt/c/Users/vivia/IEP/IEP/src/Hospital/src/Hospital.hpp
+iostream
+-
+cstring
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHospital.a  CMakeFiles/Hospital.dir/src/Hospital.cpp.o
+/usr/bin/ranlib libHospital.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLock.a  CMakeFiles/Lock.dir/src/Lock.cpp.o
+/usr/bin/ranlib libLock.a

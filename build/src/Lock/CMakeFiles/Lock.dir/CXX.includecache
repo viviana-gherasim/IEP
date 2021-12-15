@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/vivia/IEP/IEP/src/Lock/src/Lock.cpp
+Lock.hpp
+/mnt/c/Users/vivia/IEP/IEP/src/Lock/src/Lock.hpp
+
+/mnt/c/Users/vivia/IEP/IEP/src/Lock/src/Lock.hpp
+iostream
+-
+mutex
+-
+memory
+-
+

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <tr1/memory>
 using namespace std;
 
 //class specifically designed to prevent copying
@@ -79,10 +80,45 @@ class Person
         const unsigned int personAge;
 };
 
+class Food
+{
+    public:
+    virtual std::string getName()=0;
+};
+
+class Milk: public Food
+{
+    public:
+    std::string getName()
+    {
+        return "milk";
+    }
+};
+
+class Desert: public Food
+{
+    public:
+    std::string getName()
+    {
+        return "desert";
+    }
+};
+
+//factory method
+Food *createFood(int choice)
+{
+    if(choice==1)
+        return new Desert();
+    else
+    {
+        return new Milk();
+    }
+}
+
 class Hospital
 {
     public:
-        Hospital(const std::string& hospitalName, Person *owner, unsigned int nrDoctors):
+        Hospital(string hospitalName, Person *owner, unsigned int nrDoctors):
         hospitalName(hospitalName),
         owner(owner),
         nrDoctors(nrDoctors){};
@@ -98,26 +134,29 @@ class Hospital
         return hospitalName;
     }
     protected:
-        const std::string& hospitalName;
+        std::string& hospitalName;
         Person *owner;
-        const unsigned int nrDoctors;
+        unsigned int nrDoctors;
         
 };
 
 Hospital& Hospital::operator=(const Hospital& rhs)
 {
+    if(this==&rhs)   
+        return *this;
+
     Person *pOrig = owner;  //remember original pb
     owner = new Person(*rhs.owner); //point pb to a copy of rhs’s owner
-    this.hospitalName = rhs.hospitalName;  
-    this.nrDoctors = rhs.nrDoctors;
+    this->hospitalName = rhs.hospitalName;  
+    this->nrDoctors = rhs.nrDoctors;
     delete pOrig;   //delete the original pb
-    return *this;
+    return *this; 
 }
 
 class Military: public Hospital
 {
     public:
-        Military(const std::string& hospitalName, Person *owner, unsigned int nrDoctors, unsigned int nrRooms):
+        Military(string hospitalName, Person *owner, unsigned int nrDoctors, unsigned int nrRooms):
         Hospital(hospitalName, owner, nrDoctors),
         nrRooms(nrRooms){};
 
@@ -129,6 +168,13 @@ class Military: public Hospital
     void countRooms()
     {
         std::cout<<hospitalName<<"I am counting the rooms!"<<std::endl;
+    }
+
+    void feed()
+    {
+        std::tr1::shared_ptr<Food> food (createFood(1));     //creates obj instance of Desert
+        std::cout<<hospitalName<<"I am eating a"<<food->getName()<<"!";
+        std::cout<<"I finished eating!"<<std::endl<<std::endl;
     }
 
     private:
@@ -143,11 +189,65 @@ Military& Military::operator=(const Military& rhs)
     return *this;
 }
 
+class Maternity: public Hospital
+{
+    public:
+        Maternity(string hospitalName, Person *owner, unsigned int nrDoctors):
+        Hospital(hospitalName, owner, nrDoctors){};
+
+        void baby()
+        {
+            std::cout<<hospitalName<<"A baby was born!"<<std::endl;
+        }
+
+        void feed()
+        {
+            std::tr1::shared_ptr<Food> food (createFood(2));     //creates obj instance of Milk
+            std::cout<<hospitalName<<"I am drinking "<<food->getName()<<"!";
+            std::cout<<"I finished drinking!"<<std::endl<<std::endl;
+        }
+};
+
+class RenovationBudget: private Uncopyable{
+    public:
+    explicit RenovationBudget(Hospital *type)
+    :typePtr(type)
+    {   lockRenovationBudget(typePtr);    }  //aquire resource
+    ~RenovationBudget(){ unlock(typePtr); }  //release resource
+    private:
+
+    void lockRenovationBudget(Hospital *type)
+    {
+        std::cout<<type->getHospitalName()<<" locked for renovation budget!"<<std::endl;
+    }
+
+    void unlock(Hospital *type)
+    {
+        std::cout<<type->getHospitalName()<<" renovated and unlocked!"<<std::endl;
+    }
+    Hospital *typePtr;
+};  
+
 int main()
 {
     Person viviana("Viviana", 22);
     Person ana("Ana",25);
+    Person razvan("Razvan",30);
 
+    Hospital judetean("Judetean", &viviana, 30);
+
+    cout<<judetean.getHospitalName()<<"\n";
+
+    Military m1("Militar", &razvan, 22, 100);
+    m1.countRooms();
+    m1.feed();
+    RenovationBudget r1 (&m1);
+
+    Maternity mat1("Bega", &ana, 44);
+    mat1.baby();
+    mat1.feed();
+    RenovationBudget r2(&mat1);
+    
     Surgeon s1("Vivi", 37, 55000);
     Cardiologist c1("Ana", 41, 80000);
     Pediatrician p1("Oana", 48, 35000);
@@ -157,6 +257,5 @@ int main()
     c1.operates();
     p1.consult();
 
-
-    return 0;
+    return 0; 
 }
